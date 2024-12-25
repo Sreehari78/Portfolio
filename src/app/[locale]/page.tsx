@@ -234,7 +234,7 @@ export default function Home({
       </RevealFx>
 
       {/* Projects Section */}
-      <RevealFx translateY='16' delay={0.6}>
+      {/* <RevealFx translateY='16' delay={0.6}>
         <Heading variant='display-strong-m' className='mb-8'>
           Projects
         </Heading>
@@ -277,7 +277,7 @@ export default function Home({
             </a>
           ))}
         </Grid>
-      </RevealFx>
+      </RevealFx> */}
 
       {/* Contact Form Section */}
       <RevealFx translateY='16' delay={0.8}>
