@@ -235,48 +235,50 @@ export default function Home({
 
       {/* Projects Section */}
       <RevealFx translateY='16' delay={0.6}>
-        <Heading variant='display-strong-m' className='mb-8'>
-          Projects
-        </Heading>
-        <Grid columns='repeat(2, 1fr)' gap='24' padding='24'>
-          {/* {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target='_blank'
-              rel='noopener noreferrer'
-              className={styles.mask}
-              aria-label={`View ${project.title} project`}>
-              <SmartImage
-                src={project.image}
-                alt={`${project.title} project thumbnail`}
-                aspectRatio='4/3'
-                radius='l'
-                objectFit='cover'
-              />
-              <div className={styles.projectInfo}>
-                <Text
-                  className={styles.projectTitle}
-                  variant='heading-strong-s'>
-                  {project.title}
-                </Text>
-                <br />
-                <Text
-                  className={styles.projectDescription}
-                  variant='body-default-s'>
-                  {project.description}
-                </Text>
-                <div className={styles.techStack}>
-                  {project.techStack.map((tech, techIndex) => (
-                    <span key={techIndex} className={styles.techChip}>
-                      {tech}
-                    </span>
-                  ))}
+        <Flex fillWidth direction='column' gap='l'>
+          <Heading variant='display-strong-m' className='mb-8'>
+            Projects
+          </Heading>
+          <Grid columns='repeat(2, 1fr)' gap='24' padding='24'>
+            {projects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target='_blank'
+                rel='noopener noreferrer'
+                className={styles.mask}
+                aria-label={`View ${project.title} project`}>
+                <SmartImage
+                  src={project.image}
+                  alt={`${project.title} project thumbnail`}
+                  aspectRatio='4/3'
+                  radius='l'
+                  objectFit='cover'
+                />
+                <div className={styles.projectInfo}>
+                  <Text
+                    className={styles.projectTitle}
+                    variant='heading-strong-s'>
+                    {project.title}
+                  </Text>
+                  <br />
+                  <Text
+                    className={styles.projectDescription}
+                    variant='body-default-s'>
+                    {project.description}
+                  </Text>
+                  <div className={styles.techStack}>
+                    {project.techStack.map((tech, techIndex) => (
+                      <span key={techIndex} className={styles.techChip}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </a>
-          ))} */}
-        </Grid>
+              </a>
+            ))}
+          </Grid>
+        </Flex>
       </RevealFx>
 
       {/* Contact Form Section */}
