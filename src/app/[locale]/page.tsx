@@ -218,9 +218,11 @@ export default function Home({
                   <Text variant='heading-strong-s' className='mb-2'>
                     {achievement.title}
                   </Text>
+                  <br />
                   <Text variant='heading-strong-s' className='mb-2'>
                     {achievement.event}
                   </Text>
+                  <br />
                   <Text
                     variant='body-default-s'
                     onBackground='neutral-weak'
@@ -253,7 +255,7 @@ export default function Home({
                 href={project.link}
                 target='_blank'
                 rel='noopener noreferrer'
-                className={styles.projectCard}
+                className={styles.mask}
                 aria-label={`View ${project.title} project`}>
                 <SmartImage
                   src={project.image}
@@ -268,6 +270,7 @@ export default function Home({
                     variant='heading-strong-s'>
                     {project.title}
                   </Text>
+                  <br />
                   <Text
                     className={`${styles.projectDescription} ${styles.hideOnMobile}`}
                     variant='body-default-s'>

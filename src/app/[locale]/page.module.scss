@@ -1,12 +1,64 @@
+.mask {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  transition: transform 0.3s ease;
+  filter: brightness(0.85);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.projectInfo {
+  position: absolute;
+  bottom: 0rem;
+  padding: 1.2rem;
+  color: white;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.6);
+  .mask:hover & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.techChip {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
 .achievementCard {
   background: rgba(255, 255, 255, 0.05);
   border-radius: var(--radius-l);
   padding: 24px;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 
   &:hover {
     transform: translateY(-4px);
@@ -25,71 +77,8 @@
   margin-bottom: 16px;
 }
 
-.projectCard {
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--radius-l);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  height: 100%;
-
-  &:hover {
-    transform: translateY(-4px);
-  }
-}
-
-.imageWrapper {
-  position: relative;
-  padding-top: 75%; // 4:3 aspect ratio
-}
-
-.projectInfo {
-  padding: 1.2rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.projectTitle {
-  margin-bottom: 0.5rem;
-}
-
-.projectDescription {
-  flex-grow: 1;
-  margin-bottom: 1rem;
-}
-
-.techStack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: auto;
-}
-
-.techChip {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-}
-
 @media (max-width: 640px) {
   .hideOnMobile {
     display: none;
-  }
-
-  .achievementCard {
-    padding: 16px;
-  }
-
-  .achievementIcon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 12px;
-  }
-
-  .projectInfo {
-    padding: 1rem;
   }
 }
