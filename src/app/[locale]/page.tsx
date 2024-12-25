@@ -234,12 +234,12 @@ export default function Home({
       </RevealFx>
 
       {/* Projects Section */}
-      {/* <RevealFx translateY='16' delay={0.6}>
+      <RevealFx translateY='16' delay={0.6}>
         <Heading variant='display-strong-m' className='mb-8'>
           Projects
         </Heading>
         <Grid columns='repeat(2, 1fr)' gap='24' padding='24'>
-          {projects.map((project, index) => (
+          {/* {projects.map((project, index) => (
             <a
               key={index}
               href={project.link}
@@ -275,9 +275,9 @@ export default function Home({
                 </div>
               </div>
             </a>
-          ))}
+          ))} */}
         </Grid>
-      </RevealFx> */}
+      </RevealFx>
 
       {/* Contact Form Section */}
       <RevealFx translateY='16' delay={0.8}>
