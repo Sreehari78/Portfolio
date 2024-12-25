@@ -64,29 +64,32 @@ export default function Home({
   const achievements = [
     {
       icon: <Trophy className='w-6 h-6 text-white' />,
-      title: "Allianz Tech Championship 2024 Winner",
+      title: "Tech Championship Winner",
+      event: "Allianz Tech Championship",
       description:
         "Triumphed globally in Allianz Tech Championship 2024, one of 50 Indian winners, earning 3,000 EUR.",
       year: "2024",
     },
     {
       icon: <Star className='w-6 h-6 text-white' />,
-      title: "Dell & NVIDIA Hack AI Challenge Global Finalist",
+      title: "Global Finalist",
+      event: "Dell & NVIDIA Hack AI Challenge",
       description:
         "Top 30 in the Global Finals of the Hack AI Challenge conducted by Dell and NVIDIA, with over 4500 participants worldwide",
       year: "2024",
     },
     {
       icon: <Award className='w-6 h-6 text-white' />,
-      title:
-        "CyientifIQ Innovation League Global Hackathon Value Innovation Winner",
+      title: "Value Innovation Award Winner",
+      event: "CyientifIQ Innovation League Global Hackathon",
       description:
         "Captured Value Innovation award in CyientifIQ Global Hackathon, amongst 5,500+ participants, earning 1,000 USD.",
       year: "2023",
     },
     {
       icon: <Medal className='w-6 h-6 text-white' />,
-      title: "Honorary Mention UST. D3CODE National Hackathon",
+      title: "Honorary Mention",
+      event: "UST D3CODE National Hackathon",
       description:
         "Achieved Top 5 Honorary Mention in UST D3CODE National Hackathon among 12,000+ participants, winning 2,00,000 INR.",
       year: "2023",
@@ -95,7 +98,7 @@ export default function Home({
 
   const projects = [
     {
-      title: "Fidelius Platform",
+      title: "Fidelius",
       image: "/images/projects/project-01/p1.jpeg",
       description:
         "A data masking and obfuscation tool designed to enhance privacy and security by intelligently handling Personally Identifiable Information (PII).",
@@ -215,11 +218,15 @@ export default function Home({
                   <Text variant='heading-strong-s' className='mb-2'>
                     {achievement.title}
                   </Text>
-                  <br />
-                  <Text variant='body-default-s' onBackground='neutral-weak'>
+                  <Text variant='heading-strong-s' className='mb-2'>
+                    {achievement.event}
+                  </Text>
+                  <Text
+                    variant='body-default-s'
+                    onBackground='neutral-weak'
+                    className={`${styles.hideOnMobile}`}>
                     {achievement.description}
                   </Text>
-                  <br />
                   <Text
                     variant='body-default-xs'
                     onBackground='neutral-weak'
@@ -239,14 +246,14 @@ export default function Home({
           <Heading variant='display-strong-m' className='mb-8'>
             Projects
           </Heading>
-          <Grid columns='repeat(2, 1fr)' gap='24' padding='24'>
+          <Grid columns='repeat(2, 1fr)' gap='24'>
             {projects.map((project, index) => (
               <a
                 key={index}
                 href={project.link}
                 target='_blank'
                 rel='noopener noreferrer'
-                className={styles.mask}
+                className={styles.projectCard}
                 aria-label={`View ${project.title} project`}>
                 <SmartImage
                   src={project.image}
@@ -261,9 +268,8 @@ export default function Home({
                     variant='heading-strong-s'>
                     {project.title}
                   </Text>
-                  <br />
                   <Text
-                    className={styles.projectDescription}
+                    className={`${styles.projectDescription} ${styles.hideOnMobile}`}
                     variant='body-default-s'>
                     {project.description}
                   </Text>
